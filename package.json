@@ -1,6 +1,7 @@
 {
   "name": "checkout-frontend",
   "private": true,
+  "version": "0.1",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -8,14 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@stripe/react-stripe-js": "^1.6.0",
+    "@stripe/stripe-js": "^1.21.2",
     "axios": "^0.24.0",
     "next": "12.0.4",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-query": "^3.34.0"
+    "react-query": "^3.34.0",
+    "stripe": "^8.191.0"
   },
   "devDependencies": {
+    "@types/react": "^17.0.37",
     "eslint": "7",
-    "eslint-config-next": "12.0.4"
+    "eslint-config-next": "12.0.4",
+    "typescript": "^4.5.2"
   }
 }
