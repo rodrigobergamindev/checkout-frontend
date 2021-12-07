@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
+import {useRouter} from 'next/router'
 
 const stripePromise = loadStripe("pk_test_51JfA7GHvPtWhJQ2zkDI5cQoMdf1fc3BSkScga962lhQweGAgywYehCEsbGj9glrfIxRC3Edp58YInXDFVW6Tzj7W00vtPCzY48");
 
@@ -11,7 +12,7 @@ const stripePromise = loadStripe("pk_test_51JfA7GHvPtWhJQ2zkDI5cQoMdf1fc3BSkScga
 
 export default function Home() {
 
-
+  const router = useRouter()
 
   async function handleSubmit(event) {
     event.preventDefault()
@@ -22,7 +23,9 @@ export default function Home() {
         quantity: 2
     })
     
-    console.log(response)
+    if(response.data){
+      router.push(response.data)
+    }
   }
 
   return (
